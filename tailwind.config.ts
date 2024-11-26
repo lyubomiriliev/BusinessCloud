@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,20 +11,24 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: "#4297F9",
-          primaryDark: "#008AF4",
-          primaryLogo: "#72C6FA",
-          logoDark: "#4DC4FC",
-          redAccent: "#FF7474",
-          purpleAccent: "#EEA7FD",
-          orangeAccent: "#F9AA72",
-          greenAccent: "#3DD9B3",
-          black: "#04050C",
-          dark: "#131524",
-          textGray: "#F2F5F9",
-          textGrayDarker: "#F2F4F8",
-          darkGray: "#A3B2C7",
-          error: "#B80000",
+          DEFAULT: "#4297F9",
+          100: "#008AF4",
+        },
+        red: "#FF7474",
+        error: "#B80000",
+        green: "#3DD9B3",
+        blue: "#56B8FF",
+        pink: "#EEA8FD",
+        orange: "#F9AB72",
+        light: {
+          100: "#333F4E",
+          200: "#A3B2C7",
+          300: "#F2F5F9",
+          400: "#F2F4F8",
+        },
+        dark: {
+          100: "#04050C",
+          200: "#131524",
         },
       },
       fontFamily: {
@@ -51,4 +56,5 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
+export default config;
